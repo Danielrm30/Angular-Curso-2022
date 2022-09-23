@@ -1,0 +1,22 @@
+<div class="container" *ngIf="formUser" [formGroup]="formUser">
+  <h1>{{title}}</h1>
+  <mat-form-field class="input-form" appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput placeholder="Ingresa el nombre" formControlName="name">
+  </mat-form-field>
+  <mat-form-field class="input-form"  appearance="fill">
+    <mat-label>Teléfono</mat-label>
+    <input matInput type="number" placeholder="Ingresa el teléfono" formControlName="phone">
+  </mat-form-field>
+  <mat-form-field class="input-form"  appearance="fill">
+    <mat-label>Edad</mat-label>
+    <input matInput placeholder="Ingresa la edad" formControlName="age">
+  </mat-form-field>
+  <button
+  mat-raised-button color="primary"
+  [disabled]="formUser.invalid"
+   (click)="save()">
+   Guardar
+  </button>
+  <!-- botón inactivo hasta llenar los campos -->
+</div>
